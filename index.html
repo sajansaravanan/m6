@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cassiopeia A</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #003366;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .content {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .quiz {
+            margin-top: 20px;
+            background-color: #e9f5ff;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Cassiopeia A</h1>
+        <img src="https://science.nasa.gov/wp-content/uploads/2023/09/casa_elements_detail.jpg?w=2560&format=webp" alt="Cassiopeia A Image">
+        <p>Cassiopeia A is the remnant of a supernova explosion that occurred approximately 350 years ago.</p>
+        <p>It is located about 11,000 light-years from Earth in the constellation Cassiopeia.</p>
+        <p>NASA's James Webb Space Telescope has captured new images revealing intricate details of this supernova remnant.</p>
+        <p>The observations provide insights into the processes of star death and the distribution of elements in the universe.</p>
+        <p>Cassiopeia A remains a key object of study for understanding the life cycle of massive stars.</p>
+
+        <div class="quiz">
+            <h2>Quiz Question</h2>
+            <p>How far is Cassiopeia A from Earth?</p>
+            <form id="quizForm">
+                <input type="radio" id="option1" name="mcq" value="A">
+                <label for="option1">A) 5,000 light-years</label><br>
+                <input type="radio" id="option2" name="mcq" value="B">
+                <label for="option2">B) 8,000 light-years</label><br>
+                <input type="radio" id="option3" name="mcq" value="C">
+                <label for="option3">C) 11,000 light-years</label><br>
+                <input type="radio" id="option4" name="mcq" value="D">
+                <label for="option4">D) 15,000 light-years</label><br>
+                <button type="button" onclick="checkAnswer()">Submit</button>
+            </form>
+            <div class="result" id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const options = document.getElementsByName('mcq');
+            let selectedOption;
+            for (const option of options) {
+                if (option.checked) {
+                    selectedOption = option.value;
+                    break;
+                }
+            }
+            const resultDiv = document.getElementById('result');
+            if (selectedOption === 'C') {
+                resultDiv.textContent = "Correct! Cassiopeia A is about 11,000 light-years from Earth.";
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.textContent = "Incorrect. The correct answer is C) 11,000 light-years.";
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
